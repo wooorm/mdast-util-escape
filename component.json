@@ -1,6 +1,6 @@
 {
   "name": "mdast-util-escape",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Utility to escape text to be inserted into mdast",
   "license": "MIT",
   "keywords": [
