@@ -1,0 +1,18 @@
+{
+  "name": "mdast-util-escape",
+  "version": "0.0.0",
+  "description": "Utility to escape text to be inserted into mdast",
+  "license": "MIT",
+  "keywords": [
+    "mdast",
+    "markdown",
+    "escape",
+    "text",
+    "util",
+    "utility"
+  ],
+  "repository": "wooorm/mdast-util-escape",
+  "scripts": [
+    "index.js"
+  ]
+}

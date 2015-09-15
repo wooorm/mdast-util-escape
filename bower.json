@@ -1,0 +1,35 @@
+{
+  "name": "mdast-util-escape",
+  "main": "mdast-util-escape.js",
+  "description": "Utility to escape text to be inserted into mdast",
+  "license": "MIT",
+  "keywords": [
+    "mdast",
+    "markdown",
+    "escape",
+    "text",
+    "util",
+    "utility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/mdast-util-escape.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "build/",
+    "components/",
+    "coverage/",
+    "node_modules/",
+    "build.js",
+    "index.js",
+    "test.js",
+    "component.json",
+    "package.json"
+  ]
+}

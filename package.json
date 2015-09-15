@@ -1,0 +1,48 @@
+{
+  "name": "mdast-util-escape",
+  "version": "0.0.0",
+  "description": "Utility to escape text to be inserted into mdast",
+  "license": "MIT",
+  "keywords": [
+    "mdast",
+    "markdown",
+    "escape",
+    "text",
+    "util",
+    "utility"
+  ],
+  "repository": "wooorm/mdast-util-escape",
+  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "browserify": "^11.0.0",
+    "eslint": "^1.0.0",
+    "esmangle": "^1.0.0",
+    "istanbul": "^0.3.0",
+    "jscs": "^2.0.0",
+    "jscs-jsdoc": "^1.0.0",
+    "mdast": "^1.0.0",
+    "mdast-comment-config": "^1.0.0",
+    "mdast-github": "^1.0.0",
+    "mdast-lint": "^1.0.0",
+    "mdast-slug": "^2.0.0",
+    "mdast-validate-links": "^1.0.0",
+    "mocha": "^2.0.0"
+  },
+  "scripts": {
+    "test-api": "mocha --check-leaks test.js",
+    "test-coverage": "istanbul cover _mocha -- test.js",
+    "test-travis": "npm run test-coverage",
+    "test": "npm run test-api",
+    "lint-api": "eslint .",
+    "lint-style": "jscs --reporter inline .",
+    "lint": "npm run lint-api && npm run lint-style",
+    "make": "npm run lint && npm run test-coverage",
+    "bundle": "browserify index.js --no-builtins -s mdastUtilEscape > mdast-util-escape.js",
+    "postbundle": "esmangle mdast-util-escape.js > mdast-util-escape.min.js",
+    "build-md": "mdast . --quiet",
+    "build": "npm run bundle && npm run build-md"
+  }
+}

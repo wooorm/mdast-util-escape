@@ -1,0 +1,6 @@
+build/
+components/
+coverage/
+build.js
+mdast-util-escape.js
+mdast-util-escape.min.js
