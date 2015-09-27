@@ -8,78 +8,76 @@
 
 'use strict';
 
-/* eslint-env node, mocha */
+/* eslint-env node */
 
 /*
  * Dependencies.
  */
 
-var assert = require('assert');
+var test = require('tape');
 var escape = require('./index.js');
-
-/*
- * Methods.
- */
-
-var dequal = assert.deepEqual;
 
 /*
  * Tests.
  */
 
-describe('mdast-util-escape', function () {
-    it('should escape', function () {
-        dequal(escape('_foo_'), [
-            {
-                'type': 'escape',
-                'value': '_'
-            },
-            {
-                'type': 'text',
-                'value': 'foo'
-            },
-            {
-                'type': 'escape',
-                'value': '_'
-            }
-        ]);
-    });
+test('mdast-util-escape', function (t) {
+    t.deepEqual(escape('_foo_'), [
+        {
+            'type': 'escape',
+            'value': '_'
+        },
+        {
+            'type': 'text',
+            'value': 'foo'
+        },
+        {
+            'type': 'escape',
+            'value': '_'
+        }
+    ]);
 
-    it('should accept `gfm`', function () {
-        dequal(escape('~foo~', {
-            'gfm': true
-        }), [
-            {
-                'type': 'escape',
-                'value': '~'
-            },
-            {
-                'type': 'text',
-                'value': 'foo'
-            },
-            {
-                'type': 'escape',
-                'value': '~'
-            }
-        ]);
-    });
+    t.end();
+});
 
-    it('should accept `commonmark`', function () {
-        dequal(escape('| foo |', {
-            'commonmark': true
-        }), [
-            {
-                'type': 'escape',
-                'value': '|'
-            },
-            {
-                'type': 'text',
-                'value': ' foo '
-            },
-            {
-                'type': 'escape',
-                'value': '|'
-            }
-        ]);
-    });
+test('should accept `gfm`', function (t) {
+    t.deepEqual(escape('~foo~', {
+        'gfm': true
+    }), [
+        {
+            'type': 'escape',
+            'value': '~'
+        },
+        {
+            'type': 'text',
+            'value': 'foo'
+        },
+        {
+            'type': 'escape',
+            'value': '~'
+        }
+    ]);
+
+    t.end();
+});
+
+test('should accept `commonmark`', function (t) {
+    t.deepEqual(escape('| foo |', {
+        'commonmark': true
+    }), [
+        {
+            'type': 'escape',
+            'value': '|'
+        },
+        {
+            'type': 'text',
+            'value': ' foo '
+        },
+        {
+            'type': 'escape',
+            'value': '|'
+        }
+    ]);
+
+    t.end();
 });
